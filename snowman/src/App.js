@@ -1,10 +1,10 @@
 import React from 'react';
+import GameContainer from './components/GameContainer';
 
 function App() {
+
   return (
-    <div className="App">
-      Hello, World!
-    </div>
+    <GameContainer />
   );
 }
 
