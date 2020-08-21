@@ -7,7 +7,7 @@ const GameInputs = () => {
   return (
     <div>
       <Keyboard />
-      <Button />
+      <Button>New game</Button>
     </div>
   );
 }
