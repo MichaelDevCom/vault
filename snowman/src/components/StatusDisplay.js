@@ -8,7 +8,10 @@ const StatusDisplay = ({gameState, mistakes}) => {
       statusOutput = <div className="text-green">You Win!</div>;
       break;
     case 'lose':
-      statusOutput = <div className="text-red">You Lose</div>
+      statusOutput = <div className="text-red">You Lose!</div>;
+      break;
+    case 'init':
+      statusOutput = <div>Setting up new game</div>;
       break;
     default:
       statusOutput = mistakes;
