@@ -2,12 +2,12 @@ import React from 'react';
 import MaskedPhrase from './MaskedPhrase';
 import StatusDisplay from './StatusDisplay';
 
-const GameOutputs = () => {
+const GameOutputs = ({phrase, guesses}) => {
 
   return (
     <div>
       <StatusDisplay />
-      <MaskedPhrase />
+      <MaskedPhrase phrase={phrase} guesses={guesses} />
     </div>
   );
 }

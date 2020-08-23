@@ -25,7 +25,7 @@ const GameContainer = () => {
 
   return (
     <div className="game-container">
-      <GameOutputs />
+      <GameOutputs guesses={guessesState} phrase={phrase} />
       <GameInputs guesses={guessesState} onCheckLetter={handleCheckLetter} />
     </div>
   );
