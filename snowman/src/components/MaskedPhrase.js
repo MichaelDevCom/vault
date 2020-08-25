@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MaskedPhrase = ({phrase, guesses}) => {
+const MaskedPhrase = ({gameState, phrase, guesses}) => {
 
   const output = phrase && guesses && phrase.split('').map((letter) => {
     if (letter.toLowerCase() !== letter.toUpperCase()) {
@@ -13,8 +13,20 @@ const MaskedPhrase = ({phrase, guesses}) => {
     }
   });
 
+  let classes = 'masked-phrase';
+    if (phrase.length > 20) {
+      classes += ' phrase-long';
+    }
+
+    if (gameState === 'lose'){
+      classes += ' text-red';
+    }
+    else if (gameState === 'win'){
+      classes += ' text-green';
+    }
+
   return (
-    <div className="masked-phrase">{output}</div>
+    <div className={classes}>{output}</div>
   );
 }
 

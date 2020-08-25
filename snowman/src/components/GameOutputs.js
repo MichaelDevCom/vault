@@ -7,9 +7,9 @@ const GameOutputs = ({phrase, guesses, gameState}) => {
   const mistakes = guesses.filter(x => x.status === 'wrong').length;
 
   return (
-    <div>
+    <div className='game-outputs-container'>
       <StatusDisplay gameState={gameState} mistakes={mistakes} />
-      <MaskedPhrase phrase={phrase} guesses={guesses} />
+      <MaskedPhrase gameState={gameState} phrase={phrase} guesses={guesses} />
     </div>
   );
 }

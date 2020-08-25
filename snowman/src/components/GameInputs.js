@@ -22,7 +22,7 @@ const GameInputs = ({guesses, onCheckLetter, onNewGame}) => {
   }
 
   return (
-    <div>
+    <div className="game-inputs-container">
       <Keyboard onGetLetterClassName={handleGetLetterClassName} onLetterClick={handleLetterClick} />
       <Button onClick={handleNewGame}>New game</Button>
     </div>
