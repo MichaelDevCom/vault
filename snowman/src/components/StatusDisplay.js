@@ -1,7 +1,9 @@
 import React from 'react';
+import Snowman from './Snowman';
 
 const StatusDisplay = ({gameState, mistakes}) => {
   let statusOutput;
+  let classes = 'status-display';
 
   switch (gameState) {
     case 'win':
@@ -9,17 +11,19 @@ const StatusDisplay = ({gameState, mistakes}) => {
       break;
     case 'lose':
       statusOutput = <div className="text-red">You Lose!</div>;
+      classes += ' shake';
       break;
     case 'init':
       statusOutput = <div>Setting up new game</div>;
       break;
     default:
-      statusOutput = mistakes;
+      statusOutput = null;
   }
 
   return (
-    <div className="status-display">
+    <div className={classes}>
       {statusOutput}
+      <Snowman mistakes={mistakes} />
     </div>
   );
 }

@@ -85,6 +85,7 @@ html, body, #root {
 }
 
 .status-display {
+  position: relative;
   padding: 1rem;
   margin: 1rem;
   width: 100%;
@@ -109,6 +110,16 @@ html, body, #root {
   color: #f00;
 }
 
+.bodypart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+
 @media (max-height: 420px) and (orientation: landscape) {
   .game-container {
     flex-direction: row;
@@ -127,4 +138,24 @@ html, body, #root {
   .game-outputs-container {
     width: 100%;
   }
+}
+
+.shake {
+  animation: shakeFrames;
+  animation-duration: 0.5s;
+  animation-iteration-count: 5;
+}
+
+@keyframes shakeFrames {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
